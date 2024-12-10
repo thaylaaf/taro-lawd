@@ -1,0 +1,162 @@
+body {
+    background: linear-gradient(to bottom, #7f3bb0, #b8b6b6);
+    min-height: 100vh; /* Garante que o fundo cubra toda a altura da tela */
+    margin: 0;
+    font-family: 'League Spartan', sans-serif; /* Define a fonte padrão */
+}
+
+/* Estilizando a seção do logo e dos textos */
+.logoCartas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.logoCartas img {
+    display: block;
+    max-width: 200px;
+    height: auto;
+    margin: 5px;
+    padding: 0;
+}
+
+.logoCartas h1 {
+    font-size: 2rem;
+    color: #000000;
+    margin: 5px 10px; /* Reduz o espaçamento vertical do título */
+}
+
+.logoCartas h3 {
+    font-size: 1rem;
+    color: #000000;
+    margin-top: 20px;
+    max-width: 600px; /* Limita a largura do texto para melhor legibilidade */
+}
+
+/* Estilos para os títulos */
+h1, h3, button {
+    font-family: 'League Spartan', sans-serif;
+    color: #ffffff;
+}
+
+/* Ajustando o container principal */
+.container-taro {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espaçamento entre as cartas e o botão */
+}
+
+/* Estilo individual de cada carta */
+.carta {
+    width: 150px;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 15px; /* Define o arredondamento das bordas */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    overflow: hidden; /* Garante que o conteúdo respeite o border-radius */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s;
+}
+
+/* Efeito de hover na carta */
+.carta:hover {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 1);
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+/* Imagens de frente e verso */
+.carta .frente,
+.carta .verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Esconde o verso ao girar */
+    transition: transform 1.5s ease-in-out;
+}
+
+/* Inicializa o verso virado */
+.carta .verso {
+    transform: rotateY(180deg);
+}
+
+/* Imagens dentro das cartas */
+.imagem-frente,
+.imagem-verso {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit; /* Faz com que as imagens herdem o border-radius do contêiner */
+}
+
+/* Botão para revelar */
+#botaoRevelar {
+    background-color: #7f3bb0;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#botaoRevelar:hover {
+    background-color: #6a2b96; /* Cor mais escura ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento de tamanho */
+}
+
+/* Media Queries para tornar o layout responsivo */
+
+/* Para dispositivos com tela até 768px (tablets e celulares em paisagem) */
+@media (max-width: 768px) {
+    .logoCartas h1 {
+        font-size: 1.5rem; /* Reduz o tamanho do título */
+    }
+
+    .logoCartas h3 {
+        font-size: 0.9rem; /* Reduz o tamanho do texto */
+        max-width: 500px; /* Ajusta a largura do texto */
+    }
+
+    .container-taro {
+        gap: 10px; /* Reduz o espaçamento entre elementos */
+    }
+
+    .carta {
+        width: 120px;
+        height: 200px; /* Reduz o tamanho das cartas */
+    }
+
+    #botaoRevelar {
+        font-size: 16px; /* Ajusta o tamanho da fonte do botão */
+        padding: 8px 16px; /* Ajusta o tamanho do botão */
+    }
+}
+
+/* Para dispositivos com tela até 480px (celulares em retrato) */
+@media (max-width: 480px) {
+    .logoCartas h1 {
+        font-size: 1.7rem; /* Reduz ainda mais o tamanho do título */
+    }
+
+    .logoCartas h3 {
+        font-size: 1.2rem; /* Reduz ainda mais o tamanho do texto */
+        max-width: 400px; /* Ajusta a largura do texto */
+    }
+
+    .carta {
+        width: 200px;
+        height: 270px; /* Reduz mais o tamanho das cartas */
+    }
+
+    #botaoRevelar {
+        font-size: 14px; /* Ajusta o tamanho da fonte do botão */
+        padding: 6px 12px; /* Ajusta o tamanho do botão */
+    }
+}
