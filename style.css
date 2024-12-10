@@ -24,13 +24,11 @@ body {
 
 .logoCartas h1 {
     font-size: 2rem;
-    color: #000000;
     margin: 5px 10px; /* Reduz o espaçamento vertical do título */
 }
 
 .logoCartas h3 {
     font-size: 1rem;
-    color: #000000;
     margin-top: 20px;
     max-width: 600px; /* Limita a largura do texto para melhor legibilidade */
 }
